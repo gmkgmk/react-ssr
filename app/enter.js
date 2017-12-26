@@ -11,14 +11,19 @@ import routes from "../src/Router/routes";
 // redux相关
 import { Provider } from "react-redux";
 import createStore from "../src/store";
+const { routerRedux, Route, Switch } = require("dva/router");
+import { createMemoryHistory } from "history";
+const { ConnectedRouter } = routerRedux;
+const dva = require("dva").default;
+import userModel from "../src/model";
 
 const ServerRender = async ctx => {
   let context = {};
   /**
-    * 获取数据函数，from "react-router-config"api
-    * @param {any} location
-    * 请求的路径 
-  **/
+   * 获取数据函数，from "react-router-config"api
+   * @param {any} location
+   * 请求的路径
+   **/
   const loadBranchData = location => {
     const branch = matchRoutes(routes, location); //寻找匹配的路由
 
@@ -39,22 +44,27 @@ const ServerRender = async ctx => {
   }
 
   /**
- * @param {any} htmlData 
- * @object
- * 返回渲染页面
- */
+   * @param {any} htmlData
+   * @object
+   * 返回渲染页面
+   */
   function renderHtml(htmlData) {
     const store = createStore(htmlData); //生成store
-
-    const appWithRouter = (
-      <Provider store={store}>
-        <StaticRouter location={ctx.url} context={context}>
-          <App />
-        </StaticRouter>
-      </Provider>
-    );
-
-    const html = renderToString(appWithRouter);
+    const initialState = { users: { userList: htmlData } };
+    const history = createMemoryHistory();
+    const app = dva({
+      history,
+      initialState
+    });
+    app.model(userModel)
+    const context = {};
+    app.router(options => (
+      <StaticRouter location={ctx.url} context={options.context}>
+        <App />
+      </StaticRouter>
+    ));
+    console.log(context);
+    const html = renderToString(app.start()({ context }));
     ctx.status = 200;
     ctx.body = HtmlRender(html, htmlData);
   }

@@ -18,7 +18,8 @@
 * 请求fetch数据;
 * redux_ssr
 * redux-saga_ssr
+* dva-ssr
 
 完成redux版本
 在/ssr_redux里
-外面的是redux-saga版本
+外面的是dva版本

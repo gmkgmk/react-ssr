@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,37 +73,37 @@ module.exports = require("react");
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/regenerator");
+module.exports = require("babel-runtime/core-js/object/get-prototype-of");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/core-js/object/get-prototype-of");
+module.exports = require("babel-runtime/helpers/classCallCheck");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/helpers/classCallCheck");
+module.exports = require("babel-runtime/helpers/createClass");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/helpers/createClass");
+module.exports = require("babel-runtime/helpers/possibleConstructorReturn");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/helpers/possibleConstructorReturn");
+module.exports = require("babel-runtime/helpers/inherits");
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/helpers/inherits");
+module.exports = require("babel-runtime/regenerator");
 
 /***/ }),
 /* 7 */
@@ -121,8 +121,8 @@ module.exports = require("babel-runtime/helpers/asyncToGenerator");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-__webpack_require__(30).polyfill();
-__webpack_require__(31);
+__webpack_require__(29).polyfill();
+__webpack_require__(30);
 
 var get = function get(url) {
   var result = fetch(url, {
@@ -143,13 +143,13 @@ exports.default = get;
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 11 */
@@ -162,7 +162,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(1);
+var _regenerator = __webpack_require__(6);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -170,37 +170,41 @@ var _asyncToGenerator2 = __webpack_require__(7);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _home = __webpack_require__(25);
+var _home = __webpack_require__(24);
 
 var _home2 = _interopRequireDefault(_home);
 
-var _Album = __webpack_require__(28);
+var _Album = __webpack_require__(27);
 
 var _Album2 = _interopRequireDefault(_Album);
 
-var _product = __webpack_require__(32);
+var _product = __webpack_require__(31);
 
 var _product2 = _interopRequireDefault(_product);
 
-var _detail = __webpack_require__(34);
+var _detail = __webpack_require__(33);
 
 var _detail2 = _interopRequireDefault(_detail);
 
-var _zoom = __webpack_require__(35);
+var _zoom = __webpack_require__(34);
 
 var _zoom2 = _interopRequireDefault(_zoom);
 
-var _postcss = __webpack_require__(41);
+var _postcss = __webpack_require__(40);
 
 var _postcss2 = _interopRequireDefault(_postcss);
 
-var _listinfo = __webpack_require__(46);
+var _listinfo = __webpack_require__(45);
 
 var _listinfo2 = _interopRequireDefault(_listinfo);
 
-var _sagas = __webpack_require__(47);
+var _sagas = __webpack_require__(46);
 
 var _sagas2 = _interopRequireDefault(_sagas);
+
+var _dva = __webpack_require__(47);
+
+var _dva2 = _interopRequireDefault(_dva);
 
 var _get = __webpack_require__(8);
 
@@ -208,51 +212,9 @@ var _get2 = _interopRequireDefault(_get);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var routes = [
-// {
-//   path: "/",
-//   exact: true,
-//   component: HomePage,
-//   loadData: () => console.log(1)
-// },
-// {
-//   path: "/albums",
-//   component: AlbumPage,
-//   loadData: () => console.log(2)
-// },
-// {
-//   path: "/product",
-//   component: productPage,
-//   loadData: () => console.log(3)
-// },
-// {
-//   path: "/detail/:id",
-//   component: DetailPage,
-//   loadData: () => console.log(4)
-// },
-// {
-//   path: "/Zoom",
-//   component: Zoom,
-//   loadData: () => console.log(5)
-// },
-// {
-//   path: "/postcss",
-//   component: Postcss,
-//   loadData: () => console.log(6)
-// },
-// {
-//   path: "/list",
-//   component: List,
-//   loadData: async () => {
-//     let data = await FetchGet("http://jsonplaceholder.typicode.com/albums")
-//       .then(response => response.json())
-//       .catch(e => console.log("数据错误:", e));
-//     return data;
-//   }
-// },
-{
-  path: "/sagas",
-  component: _sagas2.default,
+var routes = [{
+  path: "/dvas",
+  component: _dva2.default,
   loadData: function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
       var data;
@@ -281,6 +243,109 @@ var routes = [
 
     return function loadData() {
       return _ref.apply(this, arguments);
+    };
+  }()
+}, {
+  path: "/",
+  exact: true,
+  component: _home2.default,
+  loadData: function loadData() {
+    return console.log(1);
+  }
+}, {
+  path: "/albums",
+  component: _Album2.default,
+  loadData: function loadData() {
+    return console.log(2);
+  }
+}, {
+  path: "/product",
+  component: _product2.default,
+  loadData: function loadData() {
+    return console.log(3);
+  }
+}, {
+  path: "/detail/:id",
+  component: _detail2.default,
+  loadData: function loadData() {
+    return console.log(4);
+  }
+}, {
+  path: "/Zoom",
+  component: _zoom2.default,
+  loadData: function loadData() {
+    return console.log(5);
+  }
+}, {
+  path: "/postcss",
+  component: _postcss2.default,
+  loadData: function loadData() {
+    return console.log(6);
+  }
+}, {
+  path: "/list",
+  component: _listinfo2.default,
+  loadData: function () {
+    var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
+      var data;
+      return _regenerator2.default.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return (0, _get2.default)("http://jsonplaceholder.typicode.com/albums").then(function (response) {
+                return response.json();
+              }).catch(function (e) {
+                return console.log("数据错误:", e);
+              });
+
+            case 2:
+              data = _context2.sent;
+              return _context2.abrupt("return", data);
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, undefined);
+    }));
+
+    return function loadData() {
+      return _ref2.apply(this, arguments);
+    };
+  }()
+}, {
+  path: "/sagas",
+  component: _sagas2.default,
+  loadData: function () {
+    var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+      var data;
+      return _regenerator2.default.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return (0, _get2.default)("http://jsonplaceholder.typicode.com/albums").then(function (response) {
+                return response.json();
+              }).catch(function (e) {
+                return console.log("数据错误:", e);
+              });
+
+            case 2:
+              data = _context3.sent;
+              return _context3.abrupt("return", data);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, undefined);
+    }));
+
+    return function loadData() {
+      return _ref3.apply(this, arguments);
     };
   }()
 }];
@@ -340,156 +405,36 @@ exports.default = reducer;
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _regenerator = __webpack_require__(1);
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
-var _effects = __webpack_require__(55);
-
-var _user = __webpack_require__(56);
-
-var _user2 = _interopRequireDefault(_user);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _marked = /*#__PURE__*/_regenerator2.default.mark(fetchUser),
-    _marked2 = /*#__PURE__*/_regenerator2.default.mark(mySaga),
-    _marked3 = /*#__PURE__*/_regenerator2.default.mark(mySaga);
-
-function fetchUser(action) {
-  return _regenerator2.default.wrap(function fetchUser$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.prev = 0;
-          _context.next = 3;
-          return (0, _effects.select)(function (a, b) {
-            console.log(a, b);
-          });
-
-        case 3:
-          _context.next = 10;
-          break;
-
-        case 5:
-          _context.prev = 5;
-          _context.t0 = _context["catch"](0);
-
-          console.log(_context.t0);
-          _context.next = 10;
-          return (0, _effects.put)({ type: "USER_FETCH_FAILED" });
-
-        case 10:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, _marked, this, [[0, 5]]);
-}
-
-function mySaga() {
-  return _regenerator2.default.wrap(function mySaga$(_context2) {
-    while (1) {
-      switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return (0, _effects.takeEvery)("USER_FETCH_REQUESTED", fetchUser);
-
-        case 2:
-        case "end":
-          return _context2.stop();
-      }
-    }
-  }, _marked2, this);
-}
-
-function mySaga() {
-  return _regenerator2.default.wrap(function mySaga$(_context3) {
-    while (1) {
-      switch (_context3.prev = _context3.next) {
-        case 0:
-          _context3.next = 2;
-          return (0, _effects.takeLatest)("USER_FETCH_REQUESTED", fetchUser);
-
-        case 2:
-        case "end":
-          return _context3.stop();
-      }
-    }
-  }, _marked3, this);
-}
-
-exports.default = mySaga;
+module.exports = require("dva");
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var initialState = {};
-function reducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-  var action = arguments[1];
-  var result = action.result;
-
-  switch (action.type) {
-    case "USER_FETCH_SUCCEEDED":
-      return {
-        type: "success",
-        state: state
-      };
-    case "USER_FETCH_FAILED":
-      return {
-        type: "fail",
-        state: state
-      };
-    default:
-      return state;
-  }
-}
-
-exports.default = reducer;
+module.exports = require("dva/router");
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux-saga");
-
-/***/ }),
-/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _enter = __webpack_require__(19);
+var _enter = __webpack_require__(18);
 
 var _enter2 = _interopRequireDefault(_enter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //server相关
-var Koa = __webpack_require__(57);
+var Koa = __webpack_require__(60);
 var app = new Koa();
-var koaStatic = __webpack_require__(58);
-var path = __webpack_require__(59);
-var favicon = __webpack_require__(60);
-var logger = __webpack_require__(61);
+var koaStatic = __webpack_require__(61);
+var path = __webpack_require__(62);
+var favicon = __webpack_require__(63);
+var logger = __webpack_require__(64);
 
 // 配置项相关
 var PORT = 3000;
@@ -509,7 +454,7 @@ app.listen(PORT, function () {
 });
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -519,11 +464,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(1);
+var _regenerator = __webpack_require__(6);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _promise = __webpack_require__(20);
+var _promise = __webpack_require__(19);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -535,13 +480,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(21);
+var _server = __webpack_require__(20);
 
-var _reactRouterDom = __webpack_require__(9);
+var _reactRouterDom = __webpack_require__(10);
 
-var _reactRouterConfig = __webpack_require__(22);
+var _reactRouterConfig = __webpack_require__(21);
 
-var _Router = __webpack_require__(23);
+var _Router = __webpack_require__(22);
 
 var _Router2 = _interopRequireDefault(_Router);
 
@@ -553,15 +498,34 @@ var _routes = __webpack_require__(11);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _reactRedux = __webpack_require__(10);
+var _reactRedux = __webpack_require__(9);
 
 var _store = __webpack_require__(53);
 
 var _store2 = _interopRequireDefault(_store);
 
+var _history = __webpack_require__(65);
+
+var _model = __webpack_require__(66);
+
+var _model2 = _interopRequireDefault(_model);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // redux相关
+var _require = __webpack_require__(16),
+    routerRedux = _require.routerRedux,
+    Route = _require.Route,
+    Switch = _require.Switch;
+//react组件相关
+//react相关
+
+
+var ConnectedRouter = routerRedux.ConnectedRouter;
+
+var dva = __webpack_require__(15).default;
+
+
 var ServerRender = function () {
   var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(ctx) {
     var context, loadBranchData, data, renderHtml;
@@ -571,28 +535,33 @@ var ServerRender = function () {
           case 0:
             renderHtml = function renderHtml(htmlData) {
               var store = (0, _store2.default)(htmlData); //生成store
-
-              var appWithRouter = _react2.default.createElement(
-                _reactRedux.Provider,
-                { store: store },
-                _react2.default.createElement(
+              var initialState = { users: { userList: htmlData } };
+              var history = (0, _history.createMemoryHistory)();
+              var app = dva({
+                history: history,
+                initialState: initialState
+              });
+              app.model(_model2.default);
+              var context = {};
+              app.router(function (options) {
+                return _react2.default.createElement(
                   _reactRouterDom.StaticRouter,
-                  { location: ctx.url, context: context },
+                  { location: ctx.url, context: options.context },
                   _react2.default.createElement(_Router2.default, null)
-                )
-              );
-
-              var html = (0, _server.renderToString)(appWithRouter);
+                );
+              });
+              console.log(context);
+              var html = (0, _server.renderToString)(app.start()({ context: context }));
               ctx.status = 200;
               ctx.body = (0, _render2.default)(html, htmlData);
             };
 
             context = {};
             /**
-              * 获取数据函数，from "react-router-config"api
-              * @param {any} location
-              * 请求的路径 
-            **/
+             * 获取数据函数，from "react-router-config"api
+             * @param {any} location
+             * 请求的路径
+             **/
 
             loadBranchData = function loadBranchData(location) {
               var branch = (0, _reactRouterConfig.matchRoutes)(_routes2.default, location); //寻找匹配的路由
@@ -624,10 +593,10 @@ var ServerRender = function () {
             }
 
             /**
-            * @param {any} htmlData 
-            * @object
-            * 返回渲染页面
-            */
+             * @param {any} htmlData
+             * @object
+             * 返回渲染页面
+             */
 
           case 7:
           case "end":
@@ -641,30 +610,29 @@ var ServerRender = function () {
     return _ref.apply(this, arguments);
   };
 }();
-//react组件相关
-//react相关
+
 exports.default = ServerRender;
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/core-js/promise");
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-config");
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -674,15 +642,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = __webpack_require__(24);
+var _extends2 = __webpack_require__(23);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(9);
 
 var _routes = __webpack_require__(11);
 
@@ -694,16 +660,21 @@ var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { Route, Switch } from "react-router-dom";
+var _require = __webpack_require__(16),
+    Route = _require.Route,
+    Switch = _require.Switch;
+
 var App = function App() {
   return _react2.default.createElement(
     "div",
     null,
     _react2.default.createElement(_Header2.default, null),
     _react2.default.createElement(
-      _reactRouterDom.Switch,
+      Switch,
       null,
       _routes2.default.map(function (route, idx) {
-        return _react2.default.createElement(_reactRouterDom.Route, (0, _extends3.default)({}, route, { key: idx }));
+        return _react2.default.createElement(Route, (0, _extends3.default)({}, route, { key: idx }));
       })
     )
   );
@@ -712,13 +683,13 @@ var App = function App() {
 exports.default = App;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/extends");
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -732,9 +703,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(26);
+__webpack_require__(25);
 
-var _page = __webpack_require__(27);
+var _page = __webpack_require__(26);
 
 var _page2 = _interopRequireDefault(_page);
 
@@ -762,7 +733,7 @@ var HomePage = function HomePage() {
 exports.default = HomePage;
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -770,13 +741,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/images/page2.jpg";
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -790,7 +761,7 @@ var _card = __webpack_require__(12);
 
 var _card2 = _interopRequireDefault(_card);
 
-var _table = __webpack_require__(29);
+var _table = __webpack_require__(28);
 
 var _table2 = _interopRequireDefault(_table);
 
@@ -798,7 +769,7 @@ var _spin = __webpack_require__(13);
 
 var _spin2 = _interopRequireDefault(_spin);
 
-var _regenerator = __webpack_require__(1);
+var _regenerator = __webpack_require__(6);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -806,23 +777,23 @@ var _asyncToGenerator2 = __webpack_require__(7);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _getPrototypeOf = __webpack_require__(2);
+var _getPrototypeOf = __webpack_require__(1);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(2);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(3);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(5);
+var _possibleConstructorReturn2 = __webpack_require__(4);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(6);
+var _inherits2 = __webpack_require__(5);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -830,7 +801,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(9);
+var _reactRouterDom = __webpack_require__(10);
 
 var _get = __webpack_require__(8);
 
@@ -973,25 +944,25 @@ var album = function (_Component) {
 exports.default = album;
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("antd/lib/table");
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("es6-promise");
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1001,7 +972,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _calendar = __webpack_require__(33);
+var _calendar = __webpack_require__(32);
 
 var _calendar2 = _interopRequireDefault(_calendar);
 
@@ -1031,13 +1002,13 @@ var product = function product() {
 exports.default = product;
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = require("antd/lib/calendar");
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1055,7 +1026,7 @@ var _spin = __webpack_require__(13);
 
 var _spin2 = _interopRequireDefault(_spin);
 
-var _regenerator = __webpack_require__(1);
+var _regenerator = __webpack_require__(6);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -1063,23 +1034,23 @@ var _asyncToGenerator2 = __webpack_require__(7);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _getPrototypeOf = __webpack_require__(2);
+var _getPrototypeOf = __webpack_require__(1);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(2);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(3);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(5);
+var _possibleConstructorReturn2 = __webpack_require__(4);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(6);
+var _inherits2 = __webpack_require__(5);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -1199,13 +1170,13 @@ var DetailPage = function (_Component) {
 exports.default = DetailPage;
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _LineChart = __webpack_require__(36);
+var _LineChart = __webpack_require__(35);
 
 var _LineChart2 = _interopRequireDefault(_LineChart);
 
@@ -1216,7 +1187,7 @@ module.exports = _LineChart2.default;
 // window.renderPCSize && window.renderPCSize();
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1226,23 +1197,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = __webpack_require__(2);
+var _getPrototypeOf = __webpack_require__(1);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(2);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(3);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(5);
+var _possibleConstructorReturn2 = __webpack_require__(4);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(6);
+var _inherits2 = __webpack_require__(5);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -1250,13 +1221,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _recharts = __webpack_require__(37);
+var _recharts = __webpack_require__(36);
 
-var _ZoomContainer = __webpack_require__(38);
+var _ZoomContainer = __webpack_require__(37);
 
 var _ZoomContainer2 = _interopRequireDefault(_ZoomContainer);
 
-__webpack_require__(39);
+__webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1321,13 +1292,13 @@ Demo.displayName = 'LineChartDemo';
 exports.default = Demo;
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports) {
 
 module.exports = require("recharts");
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1337,23 +1308,23 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _getPrototypeOf = __webpack_require__(2);
+var _getPrototypeOf = __webpack_require__(1);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(2);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(3);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(5);
+var _possibleConstructorReturn2 = __webpack_require__(4);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(6);
+var _inherits2 = __webpack_require__(5);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -1478,16 +1449,16 @@ ZoomContainer.displayName = 'ZoomContainer';
 exports.default = ZoomContainer;
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(40);
+__webpack_require__(39);
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -1495,7 +1466,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1509,15 +1480,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = __webpack_require__(42);
+var _classnames = __webpack_require__(41);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _indexP = __webpack_require__(43);
+var _indexP = __webpack_require__(42);
 
 var _indexP2 = _interopRequireDefault(_indexP);
 
-__webpack_require__(45);
+__webpack_require__(44);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1551,22 +1522,33 @@ var Hello = function Hello() {
 exports.default = Hello;
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = require("classnames");
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
 	"bg-yellow": "_2xobktvYdU_MvwxXYujTp_",
 	"title1": "_1yRxQrQujiIbIjMPFUvkwI",
 	"title2": "_1hhktCjQGFS5usz07RTX3m _2xobktvYdU_MvwxXYujTp_",
-	"title-test3": "_1HempcD3qzeYR1_kEyEpc6 " + __webpack_require__(44)["bg-blue"] + "",
+	"title-test3": "_1HempcD3qzeYR1_kEyEpc6 " + __webpack_require__(43)["bg-blue"] + "",
 	"menu": "_33JeaDDNxLEbJiZxQjo6I0",
 	"menu_link": "_6mpSBUEnOtQ3NCg2GY9KM"
+};
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"bg-gray": "_1I9bVhK3yfd4nt6tbQrcQx",
+	"text-blue": "_1ITvBe56GQnDqOBsFDNzmm",
+	"text-grey": "_2yb1f2KEBAA2PjaKvb1Edh",
+	"bg-blue": "_1qxYqIUR0nG-R-M8V3d5Sv"
 };
 
 /***/ }),
@@ -1582,17 +1564,6 @@ module.exports = {
 
 /***/ }),
 /* 45 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"bg-gray": "_1I9bVhK3yfd4nt6tbQrcQx",
-	"text-blue": "_1ITvBe56GQnDqOBsFDNzmm",
-	"text-grey": "_2yb1f2KEBAA2PjaKvb1Edh",
-	"bg-blue": "_1qxYqIUR0nG-R-M8V3d5Sv"
-};
-
-/***/ }),
-/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1602,7 +1573,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__(1);
+var _regenerator = __webpack_require__(6);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -1610,23 +1581,23 @@ var _asyncToGenerator2 = __webpack_require__(7);
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _getPrototypeOf = __webpack_require__(2);
+var _getPrototypeOf = __webpack_require__(1);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(2);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(3);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(5);
+var _possibleConstructorReturn2 = __webpack_require__(4);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(6);
+var _inherits2 = __webpack_require__(5);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -1638,7 +1609,7 @@ var _get = __webpack_require__(8);
 
 var _get2 = _interopRequireDefault(_get);
 
-var _reactRedux = __webpack_require__(10);
+var _reactRedux = __webpack_require__(9);
 
 var _reducers = __webpack_require__(14);
 
@@ -1750,7 +1721,7 @@ var mapDispatchToProps = { GETALL: _reducers.GETALL };
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(List);
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1760,23 +1731,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = __webpack_require__(2);
+var _getPrototypeOf = __webpack_require__(1);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(2);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(3);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(5);
+var _possibleConstructorReturn2 = __webpack_require__(4);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(6);
+var _inherits2 = __webpack_require__(5);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -1784,7 +1755,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(10);
+var _reactRedux = __webpack_require__(9);
 
 var _reducers = __webpack_require__(14);
 
@@ -1847,6 +1818,104 @@ var mapStateToProps = function mapStateToProps(state) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(SagasComponent);
 
 /***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(1);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(2);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(3);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(4);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(5);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _dva = __webpack_require__(15);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DvaComponent = function (_Component) {
+  (0, _inherits3.default)(DvaComponent, _Component);
+
+  function DvaComponent() {
+    (0, _classCallCheck3.default)(this, DvaComponent);
+    return (0, _possibleConstructorReturn3.default)(this, (DvaComponent.__proto__ || (0, _getPrototypeOf2.default)(DvaComponent)).call(this));
+  }
+
+  (0, _createClass3.default)(DvaComponent, [{
+    key: "render",
+    value: function render() {
+      console.log(this.props);
+      var userList = this.props.userList;
+
+      var dataList = null;
+      if (userList) {
+        dataList = userList.map(function (item, idx) {
+          return _react2.default.createElement(
+            "li",
+            { key: idx },
+            _react2.default.createElement(
+              "h3",
+              null,
+              item.title
+            ),
+            _react2.default.createElement(
+              "span",
+              null,
+              item.id
+            )
+          );
+        });
+      }
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "h1",
+          null,
+          "hehe"
+        ),
+        _react2.default.createElement(
+          "ul",
+          null,
+          dataList
+        )
+      );
+    }
+  }]);
+  return DvaComponent;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+  var users = state.users;
+
+  return users || {};
+};
+exports.default = (0, _dva.connect)(mapStateToProps)(DvaComponent);
+
+/***/ }),
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1883,8 +1952,43 @@ var MainMenu = function MainMenu() {
         null,
         _react2.default.createElement(
           "a",
+          { href: "/" },
+          "Home"
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "/albums" },
+          "albums"
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "/product" },
+          "product"
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "/zoom" },
+          "zoom"
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "/postcss" },
+          "postcss"
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "/list" },
+          "list"
+        ),
+        _react2.default.createElement(
+          "a",
           { href: "/sagas" },
           "sagas"
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "/dvas" },
+          "dva"
         )
       )
     )
@@ -1947,15 +2051,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(54);
 
-var _sagas = __webpack_require__(15);
+var _sagas = __webpack_require__(55);
 
 var _sagas2 = _interopRequireDefault(_sagas);
 
-var _userReduces = __webpack_require__(16);
+var _userReduces = __webpack_require__(58);
 
 var _userReduces2 = _interopRequireDefault(_userReduces);
 
-var _reduxSaga = __webpack_require__(17);
+var _reduxSaga = __webpack_require__(59);
 
 var _reduxSaga2 = _interopRequireDefault(_reduxSaga);
 
@@ -1978,12 +2082,104 @@ module.exports = require("redux");
 
 /***/ }),
 /* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _regenerator = __webpack_require__(6);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _effects = __webpack_require__(56);
+
+var _user = __webpack_require__(57);
+
+var _user2 = _interopRequireDefault(_user);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _marked = /*#__PURE__*/_regenerator2.default.mark(fetchUser),
+    _marked2 = /*#__PURE__*/_regenerator2.default.mark(mySaga),
+    _marked3 = /*#__PURE__*/_regenerator2.default.mark(mySaga);
+
+function fetchUser(action) {
+  return _regenerator2.default.wrap(function fetchUser$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return (0, _effects.select)(function (a, b) {
+            console.log(a, b);
+          });
+
+        case 3:
+          _context.next = 10;
+          break;
+
+        case 5:
+          _context.prev = 5;
+          _context.t0 = _context["catch"](0);
+
+          console.log(_context.t0);
+          _context.next = 10;
+          return (0, _effects.put)({ type: "USER_FETCH_FAILED" });
+
+        case 10:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _marked, this, [[0, 5]]);
+}
+
+function mySaga() {
+  return _regenerator2.default.wrap(function mySaga$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return (0, _effects.takeEvery)("USER_FETCH_REQUESTED", fetchUser);
+
+        case 2:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _marked2, this);
+}
+
+function mySaga() {
+  return _regenerator2.default.wrap(function mySaga$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return (0, _effects.takeLatest)("USER_FETCH_REQUESTED", fetchUser);
+
+        case 2:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  }, _marked3, this);
+}
+
+exports.default = mySaga;
+
+/***/ }),
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-saga/effects");
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2008,34 +2204,141 @@ exports.default = {
 };
 
 /***/ }),
-/* 57 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa");
-
-/***/ }),
 /* 58 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("koa-static");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var initialState = {};
+function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+  var result = action.result;
+
+  switch (action.type) {
+    case "USER_FETCH_SUCCEEDED":
+      return {
+        type: "success",
+        state: state
+      };
+    case "USER_FETCH_FAILED":
+      return {
+        type: "fail",
+        state: state
+      };
+    default:
+      return state;
+  }
+}
+
+exports.default = reducer;
 
 /***/ }),
 /* 59 */
 /***/ (function(module, exports) {
 
-module.exports = require("path");
+module.exports = require("redux-saga");
 
 /***/ }),
 /* 60 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-favicon");
+module.exports = require("koa");
 
 /***/ }),
 /* 61 */
 /***/ (function(module, exports) {
 
+module.exports = require("koa-static");
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-favicon");
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
 module.exports = require("koa-logger");
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+
+module.exports = require("history");
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _regenerator = __webpack_require__(6);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _extends2 = __webpack_require__(23);
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  namespace: "users",
+  state: {},
+  reducers: {
+    updateState: function updateState(state, _ref) {
+      var payload = _ref.payload;
+
+      return (0, _extends3.default)({}, state, payload);
+    }
+  },
+  effects: {
+    login: /*#__PURE__*/_regenerator2.default.mark(function login(action, _ref2) {
+      var call = _ref2.call,
+          put = _ref2.put;
+      var login;
+      return _regenerator2.default.wrap(function login$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              login = true;
+              _context.next = 3;
+              return put({ type: "updateState", payload: { login: login } });
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, login, this);
+    })
+  },
+  subscriptions: {
+    setup: function setup(_ref3) {
+      var dispatch = _ref3.dispatch;
+
+      dispatch({ type: "login" });
+    }
+  }
+};
 
 /***/ })
 /******/ ]);

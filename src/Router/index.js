@@ -1,7 +1,8 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
 import routes from "./routes";
 import Header from "../component/Header";
+const { Route, Switch } = require("dva/router");
 
 const App = () => {
   return (
