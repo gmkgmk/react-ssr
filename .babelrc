@@ -1,0 +1,25 @@
+{
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "node": 8,
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ],
+    "stage-0"
+  ],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ],
+    "transform-runtime"
+  ]
+}

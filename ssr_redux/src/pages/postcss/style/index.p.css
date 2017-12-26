@@ -1,0 +1,54 @@
+/**
+ * postcss-demo index css
+ */
+
+.bg-yellow {
+  background-color: yellow; 
+}
+
+/*局部*/
+.title1 {
+  color: red;
+}
+
+/*局部*/
+.title2 {
+  composes: bg-yellow; /*从当前文件继承样式，被继承的样式必须写在此样式前面*/
+  color: red;
+}
+
+
+.title-test3 {
+  color: red;
+  composes: bg-blue from './postcss-global.p.css'; /*从其他模块继承样式，不能使全局样式，因为全局样式不会被编译而compose后的样式名会被编译*/
+}
+
+
+/* before */
+
+$blue: #056ef0;
+$column: 200px;
+
+.menu {
+  width: calc(4 * $column);
+}
+
+.menu_link {
+  background: $blue;
+  width: $column;
+}
+
+/* after */
+
+.menu {
+  width: calc(4 * 200px);
+}
+
+.menu_link {
+  background: #056ef0;
+  width: 200px;
+}
+
+
+
+
